@@ -1,0 +1,6 @@
+{
+  "name": "City Night Rush - Ultimate Edition",
+  "description": "3D Highway Racing & Stunt Game with 10 customizable vehicles, daytime & night wet-road city highways, 6-lane traffic AI, stunt ramps, and Unity C# URP architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

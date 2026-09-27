@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Orbitron', sans-serif;
+    --font-hud: 'Chakra Petch', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #060911;
+    color: #f8fafc;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-hud {
+  font-family: var(--font-hud);
+}
+
+/* Custom sleek scrollbar for horizontal car strip */
+.car-strip-scroll::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.car-strip-scroll::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 9999px;
+}
+.car-strip-scroll::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.55);
+  border-radius: 9999px;
+}
+.car-strip-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.85);
+}
+
+/* Popup Animation: Scale from 0.8 to 1.0 in 0.2s easeOutBack */
+@keyframes popupEaseOutBack {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-popup-open {
+  animation: popupEaseOutBack 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes backdropDimFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-backdrop-dim {
+  animation: backdropDimFade 0.2s ease-out forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Button Click Scale Punch 0.95 -> 1.0 in 0.1s */
+.btn-punch {
+  transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+}
+.btn-punch:active {
+  transform: scale(0.92);
+}
+
+.btn-back-punch {
+  transition: transform 0.1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-back-punch:active {
+  transform: scale(0.9);
+}
+
+/* Green PLAY Button & Blue Neon Button Effects */
+.green-play-btn {
+  background: linear-gradient(180deg, #34d399 0%, #10b981 50%, #059669 100%);
+  box-shadow:
+    0 0 24px rgba(16, 185, 129, 0.8),
+    0 0 48px rgba(5, 150, 105, 0.45),
+    inset 0 2px 3px rgba(255, 255, 255, 0.7),
+    inset 0 -3px 6px rgba(6, 78, 59, 0.85);
+}
+
+.green-play-btn:hover {
+  background: linear-gradient(180deg, #6ee7b7 0%, #10b981 55%, #047857 100%);
+  box-shadow:
+    0 0 32px rgba(52, 211, 153, 0.95),
+    0 0 60px rgba(16, 185, 129, 0.65),
+    inset 0 2px 4px rgba(255, 255, 255, 0.85);
+}
+
+.neon-play-btn {
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 55%, #0369a1 100%);
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.75),
+    0 0 55px rgba(2, 132, 199, 0.45),
+    inset 0 2px 3px rgba(255, 255, 255, 0.65),
+    inset 0 -3px 6px rgba(12, 74, 110, 0.8);
+}
+
+.panel-glass {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(9, 14, 26, 0.96) 100%);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.car-card-selected {
+  border-color: #38bdf8;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.65), inset 0 0 12px rgba(56, 189, 248, 0.25);
+}
